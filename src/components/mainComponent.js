@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {DISHES} from '../assets/json/dishes';
+import { PRODUCTS } from '../assets/json/products';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './homeComponent';
 import ProductDetail from './productDetailComponent';
-import Gifts from './giftsComponent';
+import Services from './servicesComponent';
 import FindStore from './findStoreComponent';
 import Header from './headerComponent';
 import Footer from './footerComponent';
@@ -13,14 +13,14 @@ class Main extends Component{
    constructor(props){
        super(props);
        this.state={
-           products: DISHES
+           products: PRODUCTS
        }
    }  
 
    render(){
     const ProductwithId = ({match}) =>{
        return(
-           <ProductDetail product={this.products.filter((prod)=> prod.id===parseInt(match.params.productId,10)[0])} />
+           <ProductDetail product={this.state.products.filter((prod)=> prod.id===parseInt(match.params.productId,10)[0])} />
        )
     }
        return(
@@ -28,8 +28,8 @@ class Main extends Component{
                <Header />
                <Switch>
                     <Route exact path="/home" component={()=><Home products={this.state.products}/>} />
-                    <Route path="/home/:productId" component={ProductwithId} />
-                    <Route path="/gifts" component={Gifts} />
+                    <Route path="/product/:productId" component={ProductwithId} />
+                    <Route path="/services" component={Services} />
                     <Route exact path="/findstore" component={FindStore} />
                     <Redirect to="/home" />
                </Switch>
