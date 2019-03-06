@@ -32,13 +32,15 @@ class Header extends Component{
                 <div className={`${classOne}`}  >
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item " >
-                        <NavLink className="nav-link" to="/home">Products <span className="sr-only">(current)</span></NavLink>
+                        <NavLink className="nav-link" to="/home">
+                         Products <span className="sr-only">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/services">Services</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link " to="/findstore">Find A Store</NavLink>
+                        <NavLink className="nav-link " to="/findstore">
+                        <span className="fa fa-map-marker fa-lg"></span> Find A Store</NavLink>
                     </li>
                     </ul>                    
                 </div>

@@ -32,7 +32,7 @@ function Footer(){
                           338 San Petra Court<br />
                           Milpitas,California<br />
                           United States<br />
-                          <i className="fa fa-phone fa-lg"></i>: +852 1234 5678<br />                          
+                          <i className="fa fa-phone fa-lg"></i> : +408 455 4746<br />                          
                         </address>
                     </div> 
                 </div>

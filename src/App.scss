@@ -42,10 +42,18 @@ nav{
 .card-body .btn{
   font-size: 14px;
 }
+.map-wrapper{
+  height: 500px;
+  width:100%;
+  margin: 15px 0;
+}
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
-
+  .prod-list .card-text{
+    height: 65px;
+    overflow: hidden;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -64,5 +72,8 @@ nav{
     width: 100%;
     border-top: none;
   }
+}
+.map-wrapper{
+  margin:50px;
 }
 }

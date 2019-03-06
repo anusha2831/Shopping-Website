@@ -1,17 +1,17 @@
 export const LOCATIONS = [
     {
-       name: "Sydney",
-       title: "Sydney",
+       name: "Dazzle Milpitas",
+       contact: "(408)455-4746",
        position: {lat: 37.4250811,lng: -121.9117471}
     },
     {
-       name: "Melbourne",
-       title: "Melbourne",
-       position: {lat: -37.9722342,lng: 144.7729561}
+       name: "Dazzle San Jose",
+       contact: "(972)878-8878",
+       position: {lat: 37.2947551,lng: -122.0228421}
     },
     {
-       name: "Perth",
-       title: "Perth",
-       position: {lat: -31.9546904,lng: 115.8350292}
+      name: "Dazzle SFO",
+      contact: "(356)888-9878",
+       position: {lat: 37.753759,lng: -122.424866}
     }
   ]
