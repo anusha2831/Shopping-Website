@@ -4,44 +4,41 @@ import { Link } from 'react-router-dom';
 
 function Footer(){
         return(
-            <div className="footer text-light bg-dark">
+            <div className="footer text-light bg-dark pt-3">
             <div className="container">
                 <div className="row justify-content-center">             
-                    <div className="col-4 offset-1 col-sm-2">
-                        <h5>Links</h5>
+                    <div className="col-5 offset-1 col-sm-3">
+                        <h6 className="text-white-50 bg-dark">Links</h6>
                         <ul className="list-unstyled">
-                            <li><Link to="/home">Home</Link></li>
-                            <li><Link to="/aboutus">About</Link></li>
-                            <li><Link to="/menu">Menu</Link></li>
-                            <li><Link to="/contactus">Contact Us</Link></li>
+                            <li><Link to="/home" className="text-light">Product</Link></li>
+                            <li><Link to="/services" className="text-light">Services</Link></li>
+                            <li><Link to="/findstore" className="text-light">Find A Store</Link></li>
+                            <li><Link to="/" className="text-light">Help</Link></li>
                         </ul>
                     </div>
-                    <div className="col-7 col-sm-5">
-                        <h5>Our Address</h5>
+                    <div className="col-5 col-sm-3">
+                        <h6 className="text-black-50">Help & FAQs</h6>
+                        <ul className="list-unstyled">
+                            <li><Link to="/" className="text-light">Online Ordering</Link></li>
+                            <li><Link to="/" className="text-light">Shipping</Link></li>
+                            <li><Link to="/" className="text-light">Billing</Link></li>
+                            <li><Link to="/" className="text-light">Returns and Exchanges</Link></li>
+                            <li><Link to="/" className="text-light">Customer Service</Link></li>
+                        </ul>
+                    </div>
+                    <div className="col-4 col-sm-5">
+                        <h6>Our Address</h6>
                         <address>
-                          121, Clear Water Bay Road<br />
-                          Clear Water Bay, Kowloon<br />
-                          HONG KONG<br />
-                          <i className="fa fa-phone fa-lg"></i>: +852 1234 5678<br />
-                          <i className="fa fa-fax fa-lg"></i>: +852 8765 4321<br />
-                          <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:confusion@food.net">
-                             confusion@food.net</a>
+                          338 San Petra Court<br />
+                          Milpitas,California<br />
+                          United States<br />
+                          <i className="fa fa-phone fa-lg"></i>: +852 1234 5678<br />                          
                         </address>
-                    </div>
-                    <div className="col-12 col-sm-4 align-self-center">
-                        <div className="text-center">
-                            <a className="btn btn-social-icon btn-google" href="http://google.com/+"><i className="fa fa-google-plus"></i></a>
-                            <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i className="fa fa-facebook"></i></a>
-                            <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
-                            <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
-                            <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube"></i></a>
-                            <a className="btn btn-social-icon" href="mailto:"><i className="fa fa-envelope-o"></i></a>
-                        </div>
-                    </div>
+                    </div> 
                 </div>
-                <div className="row justify-content-center">             
+                <div className="row justify-content-end text-muted">             
                     <div className="col-auto">
-                        <p>© Copyright 2018 Ristorante Con Fusion</p>
+                        <p><i>©Anusha Charipally and Various Sites</i></p>
                     </div>
                 </div>
             </div>

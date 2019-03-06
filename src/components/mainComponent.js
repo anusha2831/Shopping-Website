@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { PRODUCTS } from '../assets/json/products';
+import { SERVICES } from '../assets/json/services';
+import { LOCATIONS } from '../assets/json/locations';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './homeComponent';
 import ProductDetail from './productDetailComponent';
@@ -13,14 +15,22 @@ class Main extends Component{
    constructor(props){
        super(props);
        this.state={
-           products: PRODUCTS
+           products: PRODUCTS,
+           services: SERVICES,
+           locations: LOCATIONS
        }
    }  
-
+   componentDidMount () {
+    this.setState({
+        products: PRODUCTS,
+        services: SERVICES,
+        locations: LOCATIONS
+      });
+   }
    render(){
     const ProductwithId = ({match}) =>{
        return(
-           <ProductDetail product={this.state.products.filter((prod)=> prod.id===parseInt(match.params.productId,10)[0])} />
+           <ProductDetail product={this.state.products.filter((prod)=> prod.id===parseInt(match.params.productId,10))[0]} />
        )
     }
        return(
@@ -29,8 +39,8 @@ class Main extends Component{
                <Switch>
                     <Route exact path="/home" component={()=><Home products={this.state.products}/>} />
                     <Route path="/product/:productId" component={ProductwithId} />
-                    <Route path="/services" component={Services} />
-                    <Route exact path="/findstore" component={FindStore} />
+                    <Route path="/services" component={()=><Services services={this.state.services}/>} />
+                    <Route  path="/findstore" component={()=><FindStore locations={this.state.locations} />} />
                     <Redirect to="/home" />
                </Switch>
                <Footer />

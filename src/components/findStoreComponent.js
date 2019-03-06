@@ -1,36 +1,37 @@
-import React,{ Component } from 'react';
-import { compose, withProps, withStateHandlers } from "recompose";
-//const FaAnchor = require("react-icons/lib/fa/anchor");
-import {  withScriptjs,  withGoogleMap,  GoogleMap,  Marker,  InfoWindow} from "react-google-maps";
+import React from 'react';
+import { compose, withProps } from "recompose";
+import { withScriptjs, withGoogleMap, GoogleMap,Marker, InfoWindow} from "react-google-maps";
 
-const MapWithAMakredInfoWindow = compose(
-  withStateHandlers(() => ({
-    isOpen: false,
-  }), {
-    onToggleOpen: ({ isOpen }) => () => ({
-      isOpen: !isOpen,
-    })
-  }),
-  withScriptjs,
-  withGoogleMap
+const FindStore = compose(
+    withProps({
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDf-yIqxErTkbWzKhLox7nAANnrfDIY190&libraries=geometry,drawing,places",
+        loadingElement: <div style={{ height: `100%` }} />,
+        containerElement: <div style={{ height: `800px` }} />,
+        mapElement: <div style={{ height: `100%` }} />,
+    }),
+    withScriptjs,
+    withGoogleMap
 )(props =>
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    <Marker position={{ lat: -34.397, lng: 150.644 }}  onClick={props.onToggleOpen} >
-      {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}> <div>Hii Info Window</div></InfoWindow>}
-    </Marker>
-  </GoogleMap>
+    <GoogleMap
+        defaultZoom={4}
+        defaultCenter={{
+          lat: 48.724865087482755,
+          lng: -3.4469044744779467
+                       }}>
+
+         {props.locations.map((place) => {
+            return(
+            <Marker key={`marker-${place.name}`} title={place.title} name={place.name} position={place.position}>
+              <InfoWindow key={`infowindow-${place.name}`}  visible={true}>
+                <div>{place.title}</div>
+              </InfoWindow>
+            </Marker>
+            )
+         })}
+
+    </GoogleMap>
 );
 
 
-function FindStore(){
-    return(                
-        <MapWithAMakredInfoWindow
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh9llAihVH0A1o4T49VSoIqaLMGraRzzs&v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-        />
-    )
-}
 
 export default FindStore;
